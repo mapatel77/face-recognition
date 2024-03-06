@@ -101,7 +101,7 @@ class App extends Component {
 onButtonSubmit = () => {
  this.setState({imageUrl: this.state.input});
 //const MODEL_ID = 'face-detection'; 
-fetch('http://localhost:3000/imageurl', {
+fetch('https://smart-brain-api-odza.onrender.com/imageurl', {
   method:"POST",
   headers:{'Content-Type':'application/json'},
   body : JSON.stringify({
@@ -111,7 +111,7 @@ fetch('http://localhost:3000/imageurl', {
   .then(response => response.json())
   .then(result =>{
     if(result){
-      fetch('http://localhost:3000/image', {
+      fetch('https://smart-brain-api-odza.onrender.com/image', {
         method:"PUT",
         headers:{'Content-Type':'application/json'},
         body : JSON.stringify({
